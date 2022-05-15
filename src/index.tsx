@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <IsometricContainer>
       <Isometric>
-        <IsometricGrid
+        {/* <IsometricGrid
           size={2}
           sizeMultiplier={{
             width: 2,
@@ -50,7 +50,7 @@ root.render(
           //   delay: "0s",
           //   duration: "7s",
           // }}
-        />
+        /> */}
         {/* <IsometricCube
           width={2}
           height={2}
@@ -66,16 +66,17 @@ root.render(
             duration: "2s",
             options: "alternate infinite",
           }}
-          shadowAnimation={{
-            name: "planeShadowAnimation",
-            from: 0,
-            to: 1,
-            spacingX: 2,
-            spacingY: 2,
-            delay: "0s",
-            duration: "2s",
-            options: "alternate infinite",
-          }}
+          shadow={{ distance: 0.3, spacingX: 0.5, spacingY: 0.5 }}
+          // shadowAnimation={{
+          //   name: "planeShadowAnimation",
+          //   from: 0,
+          //   to: 1,
+          //   spacingX: 2,
+          //   spacingY: 2,
+          //   delay: "0s",
+          //   duration: "2s",
+          //   options: "alternate infinite",
+          // }}
         >
           <>
             <div></div>
@@ -86,7 +87,7 @@ root.render(
             <div></div>
           </>
         </IsometricCube> */}
-        {/* <IsometricPlane
+        <IsometricPlane
           width={2}
           height={6}
           color="#dd604a"
@@ -117,7 +118,7 @@ root.render(
           //   delay: "0s",
           //   duration: "7s",
           // }}
-        /> */}
+        />
       </Isometric>
     </IsometricContainer>
   </React.StrictMode>
