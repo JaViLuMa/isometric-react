@@ -1,7 +1,7 @@
 {
   "name": "isometric-react",
   "description": "Isometric styling library made in React with as much flexibility over customization as possible. Rewrite of https://morgancaron.github.io/IsometricSass/ .",
-  "version": "1.0.16",
+  "version": "1.0.20",
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,9 +20,16 @@
     "styled-components": "^5.3.5",
     "typescript": "^4.4.2"
   },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "yarn clean && yarn build:cjs && yarn build:esm && yarn copyfiles",
+    "build:esm": "tsc --module es6 --outdir ./dist/esm/",
+    "build:cjs": "tsc --module commonjs --outdir  ./dist/",
+    "clean": "rimraf dist/",
     "eject": "react-scripts eject",
     "prepublish": "tsc",
     "deploy": "npm publish --access public"
