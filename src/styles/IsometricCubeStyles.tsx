@@ -3,6 +3,7 @@ import darken from "../utils/darken";
 import after from "./after";
 import keyframes from "./keyframes";
 import shadowCSS from "./shadowCSS";
+import { IsometricCubeProps } from "../types/IsometricCubeProps";
 
 const IsometricCubeStyles = styled.div<IsometricCubeProps>`
   position: absolute;

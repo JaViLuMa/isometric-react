@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import keyframes from "./keyframes";
 import after from "./after";
 import shadowCSS from "./shadowCSS";
+import { IsometricGridProps } from "../types/IsometricGridProps";
 
 const IsometricGridStyles = styled.div<IsometricGridProps>`
   position: absolute;

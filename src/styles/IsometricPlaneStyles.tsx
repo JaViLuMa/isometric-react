@@ -4,6 +4,7 @@ import after from "./after";
 import darken from "../utils/darken";
 import keyframes from "./keyframes";
 import shadowCSS from "./shadowCSS";
+import { IsometricPlaneProps } from "../types/IsometricPlaneProps";
 
 const IsometricPlaneStyles = styled.div<IsometricPlaneProps>`
   position: absolute;

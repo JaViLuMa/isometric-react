@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
+import { IsometricCubeProps } from "../../types/IsometricCubeProps";
 import IsometricCubeStyles from "../../styles/IsometricCubeStyles";
 
 const IsometricCube: FC<IsometricCubeProps> = ({
@@ -14,7 +15,7 @@ const IsometricCube: FC<IsometricCubeProps> = ({
   shadowAnimation,
   rotate,
   className,
-}) => (
+}): ReactElement => (
   <IsometricCubeStyles
     width={width}
     height={height}

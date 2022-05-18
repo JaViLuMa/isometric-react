@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
+import { IsometricPlaneProps } from "../../types/IsometricPlaneProps";
 import IsometricPlaneStyles from "../../styles/IsometricPlaneStyles";
 
 const IsometricPlane: FC<IsometricPlaneProps> = ({
@@ -14,7 +15,7 @@ const IsometricPlane: FC<IsometricPlaneProps> = ({
   shadowAnimation,
   rotate,
   className,
-}) => (
+}): ReactElement => (
   <IsometricPlaneStyles
     width={width}
     height={height}
