@@ -46,7 +46,7 @@ const Showcase = () => {
       
 </td>
 <td>
-<img src="https://user-images.githubusercontent.com/16469387/218879862-b96d96a4-816c-42b1-8e7a-782a18244830.png" alt="Container preview" width="500" height="500" />
+<img src="https://user-images.githubusercontent.com/16469387/218879862-b96d96a4-816c-42b1-8e7a-782a18244830.png" alt="Container preview" width="300" height="300" />
 </td>
 </tr>
 </tbody>
@@ -96,7 +96,7 @@ const Showcase = () => {
       
 </td>
 <td>
-<img src="https://user-images.githubusercontent.com/16469387/218881920-fcc04d26-1c1a-44f6-a43a-730d75be0045.png" alt="Grid preview" width="500" height="500" />
+<img src="https://user-images.githubusercontent.com/16469387/218881920-fcc04d26-1c1a-44f6-a43a-730d75be0045.png" alt="Grid preview" width="300" height="300" />
 </td>
 </tr>
 </tbody>
