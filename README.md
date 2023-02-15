@@ -158,6 +158,77 @@ const Showcase = () => {
 | width         | Defines the width of a plane                                                                                                                             | `number`                                                                                                                                                  | `True`   |
 | height        | Defines the height of a plane                                                                                                                            | `number`                                                                                                                                                  | `True`   |
 | color         | Defines the color of the grid. Accepts RGB, Hex or just a regular color name                                                                             | `string`                                                                                                                                                  | `True`   |
-| border        | Defines the border of the plane                                                                                                                          | `{ size: string; style: 'dotted' \| 'dashed' \| 'solid' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| 'none' \| 'hidden'; color: string }` | `False`  |
-| edge          | [Defines the "shadow" plane of the current plane (works best with lower depth values)](https://user-images.githubusercontent.com/16469387/219111806-282f3999-238a-44cd-9473-1268d8dab6b7.png) | `{ depth: string ([number][unit]); color: string (HEX colors only); }`                                                                                    | `False`  |
+| border        | Defines the border of the plane                                                                                                                          | `{ size: string ([number][unit]); style: 'dotted' \| 'dashed' \| 'solid' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| 'none' \| 'hidden'; color: string (HEX colors only) }` | `False`  |
+| edge          | [Defines the "shadow" plane of the current plane (works best with lower depth values)](https://user-images.githubusercontent.com/16469387/219111806-282f3999-238a-44cd-9473-1268d8dab6b7.png) | `{ depth: string ([number][unit]); color: string (HEX colors only) }`                                                                                    | `False`  |
 | children      | Takes any HTML or JSX/TSX elements and renders them                                                                                                      | `JSX.Element \| JSX.Element[]`                                                                                                                            | `False`  |
+
+## Cube component ##
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+      
+```ts
+import { IsometricCube } from "isometric-react";
+
+const Showcase = () => {
+  return (
+    <IsometricContainer>
+      <Isometric>
+
+        <IsometricCube
+          width={5}
+          height={5}
+          depth={5}
+          color="rgb(255, 255, 255)"
+          border={{
+            size: "2px",
+            style: "solid",
+            color: "#000000",
+          }}
+        >
+          {[...Array(6)].map((_, sideIndex) => (
+            <div key={sideIndex}>Side: {sideIndex}</div>
+          ))}
+        </IsometricCube>
+
+      </Isometric>
+    </IsometricContainer>
+  );
+};
+```
+      
+</td>
+<td>
+<img src="https://user-images.githubusercontent.com/16469387/219188395-815e69fc-98c4-4ebe-ae1b-352c360be476.png" alt="Cube preview" width="400" height="400" />
+</td>
+</tr>
+</tbody>
+</table>
+
+### IMPORTANT PART ABOUT CUBE COMPONENT ###
+
+Cube component is the only component that `REQUIRES` children. It works the following way:
+- Each child of IsometricCube component represents one cube side. (6 in total).
+- Sides follow this pattern: `top`, `front left`, `front right`, `bottom`, `back right`, `back left`.
+- One child is enough for component to work, but keep in mind the pattern from above where that child will appear if you plan on using less than 6 children (6 cube sides).
+
+One solution would be to make all 6 sides available using empty `div` elements. and then use/hide the sides you have in mind to use/not use.
+
+### Cube API ###
+
+| Property name | Description                                                                                                                                                                        | Type                                                                                                                                                      | Required |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| width         | Defines the width of a cube                                                                                                                                                        | `number`                                                                                                                                                  | `True`   |
+| height        | Defines the height of a cube                                                                                                                                                       | `number`                                                                                                                                                  | `True`   |
+| depth         | Defines how tall the cube will be                                                                                                                                                  | `number`                                                                                                                                                  | `True`   |
+| color         | Defines the color of the grid. Accepts RGB, Hex or just a regular color name                                                                                                       | `string`                                                                                                                                                  | `True`   |
+| children      | Takes any HTML or JSX/TSX elements and renders them on one of the cubes sides following the next pattern: `top`, `front left`, `front right`, `bottom`, `back right`, `back left`. | `JSX.Element \| JSX.Element[]`                                                                                                                            | `True`   |
+| border        | Defines the border of the plane                                                                                                                                                    | `{ size: string ([number][unit]); style: 'dotted' \| 'dashed' \| 'solid' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| 'none' \| 'hidden'; color: string (HEX colors only) }` | `False`  |
