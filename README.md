@@ -207,7 +207,7 @@ const Showcase = () => {
       
 </td>
 <td>
-<img src="https://user-images.githubusercontent.com/16469387/219188395-815e69fc-98c4-4ebe-ae1b-352c360be476.png" alt="Cube preview" width="400" height="400" />
+<img src="https://user-images.githubusercontent.com/16469387/219188395-815e69fc-98c4-4ebe-ae1b-352c360be476.png" alt="Cube preview" width="300" height="300" />
 </td>
 </tr>
 </tbody>
