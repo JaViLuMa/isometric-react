@@ -220,7 +220,7 @@ Cube component is the only component that `REQUIRES` children. It works the foll
 - Sides follow this pattern: `top`, `front left`, `front right`, `bottom`, `back right`, `back left`.
 - One child is enough for component to work, but keep in mind the pattern from above where that child will appear if you plan on using less than 6 children (6 cube sides).
 
-One solution would be to make all 6 sides available using empty `div` elements. and then use/hide the sides you have in mind to use/not use.
+One solution would be to make all 6 sides available using empty `div` elements and then use/hide the sides you have in mind to use/not use.
 
 ### Cube API ###
 
