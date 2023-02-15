@@ -128,7 +128,7 @@ const Showcase = () => {
 <td>
       
 ```ts
-import { IsometricGrid } from "isometric-react";
+import { IsometricPlane } from "isometric-react";
 
 const Showcase = () => {
   return (
