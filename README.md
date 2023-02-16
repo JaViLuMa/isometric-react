@@ -57,7 +57,7 @@ const Showcase = () => {
 Isometric React comes with couple of components that all have their specific properties.
 They need to be placed inside the previously mentioned containers (replacing `<p>Hello World!</p>` with Isometric components).
 
-Below you will find API for each component that exists inside this package. For more advance usage (like shadows, position changing, animations, etc.) you can find that further below under `Advanced API` section.
+Below you will find API for each component that exists inside this package. For more advance usage (like shadows, position changing, animations, etc.) you can find that further below under [`Advanced API`](#advanced-api) section.
 
 ## Grid Component ##
 
