@@ -222,6 +222,8 @@ Cube component is the only component that `REQUIRES` children. It works the foll
 
 One solution would be to make all 6 sides available using empty `div` elements and then use/hide the sides you have in mind to use/not use.
 
+To try out how the cube component works, you can do so [here](https://codesandbox.io/s/amazing-bash-jus5vv).
+
 ### Cube API ###
 
 | Property name | Description                                                                                                                                                                        | Type                                                                                                                                                      | Required |
@@ -232,3 +234,183 @@ One solution would be to make all 6 sides available using empty `div` elements a
 | color         | Defines the color of the grid. Accepts RGB, Hex or just a regular color name                                                                                                       | `string`                                                                                                                                                  | `True`   |
 | children      | Takes any HTML or JSX/TSX elements and renders them on one of the cubes sides following the next pattern: `top`, `front left`, `front right`, `bottom`, `back right`, `back left`. | `JSX.Element \| JSX.Element[]`                                                                                                                            | `True`   |
 | border        | Defines the border of the plane                                                                                                                                                    | `{ size: string ([number][unit]); style: 'dotted' \| 'dashed' \| 'solid' \| 'double' \| 'groove' \| 'ridge' \| 'inset' \| 'outset' \| 'none' \| 'hidden'; color: string (HEX colors only) }` | `False`  |
+
+## Advanced API ##
+
+### Shadow ###
+
+Every component comes with this `optional` property. It creates a shadow below the item. You can try it online [here](https://codesandbox.io/s/serene-banach-c1e8de).
+
+#### Usage ####
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+      
+```ts
+const Showcase = () => {
+  return (
+    <IsometricContainer>
+      <Isometric>
+        <IsometricPlane
+          color="#ffffff"
+          width={5}
+          height={5}
+          shadow={{
+            distance: 0.7,
+            spacingX: 1,
+            spacingY: 1,
+          }}
+        />
+      </Isometric>
+    </IsometricContainer>
+  );
+};
+```
+      
+</td>
+<td>
+<img src="https://user-images.githubusercontent.com/16469387/219207943-0e63a10b-4f82-49e5-91e0-28d765d3a1cf.png" alt="Shadow preview" width="300" height="300" />
+</td>
+</tr>
+</tbody>
+</table>
+
+| Property name | Description                           | Type                                                       | Required |
+|---------------|---------------------------------------|------------------------------------------------------------|----------|
+| shadow        | Defines the shadow of cube/plane/grid | `{ distance: number; spacingX: number; spacingY: number }` | `False`  |
+
+### Position ###
+
+Every component comes with this `optional` property. It offsets (moves) the item for given values. You can try it online [here](https://codesandbox.io/s/dawn-sun-lihv7u).
+
+#### Usage ####
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+      
+```ts
+const Showcase = () => {
+  return (
+    <IsometricContainer>
+      <Isometric>
+        <IsometricGrid
+          size={5}
+          ...
+        />
+        <IsometricCube
+          ...
+          color="rgb(255, 255, 255)"
+        >
+          {[...Array(6)].map((_, sideIndex) => (
+            <div key={sideIndex}>
+              ...
+            </div>
+          ))}
+        </IsometricCube>
+        <IsometricCube
+          ...
+          color="rgb(0, 255, 0)"
+          position={{
+            top: 10,
+            left: 15,
+            elevation: 0,
+          }}
+        >
+          {[...Array(6)].map((_, sideIndex) => (
+            <div key={sideIndex}>
+              ...
+            </div>
+          ))}
+        </IsometricCube>
+      </Isometric>
+    </IsometricContainer>
+  );
+};
+```
+      
+</td>
+<td>
+<img src="https://user-images.githubusercontent.com/16469387/219218744-c384319d-8ceb-4df8-bf2c-b5cd59ba284e.png" alt="Position preview" width="300" height="300" />
+</td>
+</tr>
+</tbody>
+</table>
+
+| Property name | Description                             | Type                                               | Required |
+|---------------|-----------------------------------------|----------------------------------------------------|----------|
+| position      | Defines the position of cube/plane/grid | `{ top: number; left: number; elevation: number }` | `False`  |
+
+### Animation ###
+
+Every component comes with this `optional` property. It animates the component based on the given values.
+
+#### Usage ####
+
+You can try and see how animation works [here](https://codesandbox.io/s/priceless-shadow-q8hmc5).
+
+`animation` is a property that accepts an `OBJECT` with following properties:
+
+| Property name | Description                                                 | Type   | Required |
+|---------------|-------------------------------------------------------------|--------|----------|
+| name          | Name of the animation                                       | string | `True`   |
+| attribute     | Transform                                                   | string | `True`   |
+| from          | Where to start animation from                               | string | `True`   |
+| to            | Where to finish animation                                   | string | `True`   |
+| delay         | Delay of the animation                                      | string | `True`   |
+| duration      | Duration of the animation                                   | string | `True`   |
+| options       | Additional animation options like infinite, alternate, etc. | string | `True`   |
+
+### Shadow Animation ###
+
+Every component comes with this `optional` property. It animates the components shadow based on the given values.
+
+#### Usage ####
+
+You can try and see how shadow animation works [here](https://codesandbox.io/s/cool-snowflake-4enjt0).
+
+`shadowAnimation` is a property that accepts an `OBJECT` with following properties:
+
+| Property name | Description                                                 | Type   | Required |
+|---------------|-------------------------------------------------------------|--------|----------|
+| name          | Name of the animation                                       | string | `True`   |
+| from          | Where to start animation from                               | number | `True`   |
+| to            | Where to finish animation                                   | number | `True`   |
+| spacingX      | Offset shadow on X axis                                     | number | `True`   |
+| spacingY      | Offset shadow on Y axis                                     | number | `True`   |
+| delay         | Delay of the animation                                      | string | `True`   |
+| duration      | Duration of the animation                                   | string | `True`   |
+| options       | Additional animation options like infinite, alternate, etc. | string | `True`   |
+
+### Rotation ###
+
+Every component comes with this `optional` property. It rotates the component based on the given values.
+
+#### Usage ####
+
+You can try and see how rotation works [here](https://codesandbox.io/s/wizardly-satoshi-6ve55i).
+
+`rotate` is a property that accepts an `OBJECT` with following properties:
+
+| Property name | Description                  | Type                 | Required |
+|---------------|------------------------------|----------------------|----------|
+| name          | Name of the animation        | string               | `True`   |
+| from          | Where to start rotation from | string ([number]deg) | `True`   |
+| to            | Where to finish rotation     | string ([number]deg) | `True`   |
+| delay         | Delay of the animation       | string               | `True`   |
+| duration      | Duration of the animation    | string               | `True`   |
