@@ -386,16 +386,16 @@ You can try and see how shadow animation works [here](https://codesandbox.io/s/c
 
 `shadowAnimation` is a property that accepts an `OBJECT` with following properties:
 
-| Property name | Description                                                 | Type   | Required |
-|---------------|-------------------------------------------------------------|--------|----------|
-| name          | Name of the animation                                       | string | `True`   |
-| from          | Where to start animation from                               | number | `True`   |
-| to            | Where to finish animation                                   | number | `True`   |
-| spacingX      | Offset shadow on X axis                                     | number | `True`   |
-| spacingY      | Offset shadow on Y axis                                     | number | `True`   |
-| delay         | Delay of the animation                                      | string | `True`   |
-| duration      | Duration of the animation                                   | string | `True`   |
-| options       | Additional animation options like infinite, alternate, etc. | string | `True`   |
+| Property name | Description                                                        | Type   | Required |
+|---------------|--------------------------------------------------------------------|--------|----------|
+| name          | Name of the shadow animation                                       | string | `True`   |
+| from          | Where to start shadow animation from                               | number | `True`   |
+| to            | Where to finish shadow animation                                   | number | `True`   |
+| spacingX      | Offset shadow on X axis                                            | number | `True`   |
+| spacingY      | Offset shadow on Y axis                                            | number | `True`   |
+| delay         | Delay of the shadow animation                                      | string | `True`   |
+| duration      | Duration of the shadow animation                                   | string | `True`   |
+| options       | Additional shadow animation options like infinite, alternate, etc. | string | `True`   |
 
 ### Rotation ###
 
@@ -409,8 +409,8 @@ You can try and see how rotation works [here](https://codesandbox.io/s/wizardly-
 
 | Property name | Description                  | Type                 | Required |
 |---------------|------------------------------|----------------------|----------|
-| name          | Name of the animation        | string               | `True`   |
+| name          | Name of the rotation         | string               | `True`   |
 | from          | Where to start rotation from | string ([number]deg) | `True`   |
 | to            | Where to finish rotation     | string ([number]deg) | `True`   |
-| delay         | Delay of the animation       | string               | `True`   |
-| duration      | Duration of the animation    | string               | `True`   |
+| delay         | Delay of the rotation        | string               | `True`   |
+| duration      | Duration of the rotation     | string               | `True`   |
