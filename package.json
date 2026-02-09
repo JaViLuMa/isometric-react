@@ -1,0 +1,68 @@
+{
+  "name": "isometric-react",
+  "version": "2.0.0",
+  "author": "Matej Ruzic da Silva Pereira <matej.ruzic011@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaViLuMa/isometric-react.git"
+  },
+  "peerDependencies": {
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.3.13",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/browser-playwright": "^4.0.16",
+    "bumpp": "^10.3.2",
+    "rollup-plugin-scss": "^4.0.1",
+    "sass": "^1.97.3",
+    "tsdown": "^0.18.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16",
+    "vitest-browser-react": "^2.0.2"
+  },
+  "exports": {
+    "./isometric": "./dist/isometric.js",
+    "./isometric-cube": "./dist/isometric-cube.js",
+    "./isometric-grid": "./dist/isometric-grid.js",
+    "./isometric-plane": "./dist/isometric-plane.js",
+    "./isometric.css": "./dist/isometric.css",
+    "./package.json": "./package.json"
+  },
+  "bugs": {
+    "url": "https://github.com/JaViLuMa/isometric-react/issues"
+  },
+  "description": "Isometric styling library made in React with as much flexibility over customization as possible. Rewrite of https://morgancaron.github.io/IsometricSass/ .",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/JaViLuMa/isometric-react#readme",
+  "keywords": [
+    "isometric",
+    "react",
+    "components"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "play": "vite",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "type": "module"
+}

@@ -1,0 +1,520 @@
+@property --isometric-cube-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-cube-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-cube-depth {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-border-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --isometric-border-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000000;
+}
+
+@property --isometric-border-style {
+  syntax: "<custom-ident>";
+  inherits: false;
+  initial-value: solid;
+}
+
+@property --isometric-grid-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1rem;
+}
+
+@property --isometric-grid-lineweight {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 1%;
+}
+
+@property --isometric-grid-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000000;
+}
+
+@property --isometric-grid-width {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --isometric-grid-height {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --isometric-plane-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000000;
+}
+
+@property --isometric-plane-width {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --isometric-plane-height {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --isometric-edge-size {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --isometric-edge-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000000;
+}
+
+@property --isometric-edge-depth {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --isometric-position-top {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-position-left {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-position-elevation {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-rotation-from {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --isometric-rotation-to {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 360deg;
+}
+
+@property --isometric-rotation-delay {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 0s;
+}
+
+@property --isometric-rotation-duration {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 1s;
+}
+
+@property --isometric-shadow-animation-from {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --isometric-shadow-animation-from-with-unit {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-shadow-animation-to {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --isometric-shadow-animation-to-with-unit {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-shadow-animation-delay {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 0s;
+}
+
+@property --isometric-shadow-animation-duration {
+  syntax: "<time>";
+  inherits: false;
+  initial-value: 1s;
+}
+
+@property --isometric-shadow-animation-options {
+  syntax: "<custom-ident>";
+  inherits: false;
+  initial-value: normal;
+}
+
+@property --isometric-shadow-spacing-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-shadow-spacing-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+@property --isometric-shadow-distance {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --isometric-shadow-distance-with-unit {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0rem;
+}
+
+.isometric-container,
+.isometric-container *,
+.isometric-container *::before,
+.isometric-container *::after {
+  box-sizing: border-box;
+}
+
+.isometric-container {
+  overflow: hidden;
+}
+
+.isometric {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
+}
+
+.isometric * {
+  transform-style: preserve-3d;
+}
+
+.isometric-cube {
+  position: absolute;
+  width: var(--isometric-cube-width, 0rem);
+  height: var(--isometric-cube-height, 0rem);
+  transform-origin: center;
+}
+
+.isometric-cube > * {
+  position: absolute;
+  border-width: var(--isometric-border-size-cube, 0px);
+  border-color: color-mix(
+    in srgb,
+    var(--isometric-border-color-cube, #fff),
+    #000 20%
+  );
+  border-style: var(--isometric-border-style-cube, solid);
+  box-sizing: border-box;
+}
+
+.isometric-cube-top {
+  width: var(--isometric-cube-width, 0rem);
+  height: var(--isometric-cube-height, 0rem);
+  transform: translateZ(var(--isometric-cube-depth, 0rem));
+}
+
+.isometric-cube-front-left {
+  width: var(--isometric-cube-width, 0rem);
+  height: var(--isometric-cube-depth, 0rem);
+  transform: translateY(
+      calc(
+        var(--isometric-cube-height, 0rem) -
+        (var(--isometric-cube-depth, 0rem) / 2)
+      )
+    )
+    translateZ(calc(var(--isometric-cube-depth, 0rem) / 2)) rotateX(-90deg);
+}
+
+.isometric-cube-front-right {
+  width: var(--isometric-cube-height, 0rem);
+  height: var(--isometric-cube-depth, 0rem);
+  transform: translateX(
+      calc(
+        var(--isometric-cube-width, 0rem) -
+        (var(--isometric-cube-height, 0rem) / 2)
+      )
+    )
+    translateY(
+      calc(
+        var(--isometric-cube-height, 0rem) /
+        2 -
+        (var(--isometric-cube-depth, 0rem) / 2)
+      )
+    )
+    translateZ(calc(var(--isometric-cube-depth, 0rem) / 2)) rotateX(-90deg)
+    rotateY(90deg);
+}
+
+.isometric-cube-bottom {
+  width: var(--isometric-cube-width, 0rem);
+  height: var(--isometric-cube-height, 0rem);
+  transform: initial;
+}
+
+.isometric-cube-back-right {
+  width: var(--isometric-cube-width, 0rem);
+  height: var(--isometric-cube-depth, 0rem);
+  transform: translateY(calc(-1 * var(--isometric-cube-depth, 0rem) / 2))
+    translateZ(calc(var(--isometric-cube-depth, 0rem) / 2)) rotateX(-90deg);
+}
+
+.isometric-cube-back-left {
+  width: var(--isometric-cube-height, 0rem);
+  height: var(--isometric-cube-depth, 0rem);
+  transform: translateX(calc(-1 * var(--isometric-cube-height, 0rem) / 2))
+    translateY(
+      calc(
+        var(--isometric-cube-height, 0rem) /
+        2 -
+        (var(--isometric-cube-depth, 0rem) / 2)
+      )
+    )
+    translateZ(calc(var(--isometric-cube-depth, 0rem) / 2)) rotateX(-90deg)
+    rotateY(90deg);
+}
+
+.isometric-grid {
+  position: absolute;
+  background-image:
+    linear-gradient(
+      var(--isometric-grid-color, #000) var(--isometric-grid-lineweight, 1%),
+      transparent var(--isometric-grid-lineweight, 1%),
+      transparent calc(100% - var(--isometric-grid-lineweight, 1%)),
+      var(--isometric-grid-color, #000)
+        calc(100% - var(--isometric-grid-lineweight, 1%))
+    ),
+    linear-gradient(
+      90deg,
+      var(--isometric-grid-color, #000) var(--isometric-grid-lineweight, 1%),
+      transparent var(--isometric-grid-lineweight, 1%),
+      transparent calc(100% - var(--isometric-grid-lineweight, 1%)),
+      var(--isometric-grid-color, #000)
+        calc(100% - var(--isometric-grid-lineweight, 1%))
+    );
+  background-size: var(--isometric-grid-size, 1rem)
+    var(--isometric-grid-size, 1rem);
+  width: calc(
+    var(--isometric-grid-size, 1rem) *
+    var(--isometric-grid-width, 1)
+  );
+  height: calc(
+    var(--isometric-grid-size, 1rem) *
+    var(--isometric-grid-height, 1)
+  );
+}
+
+.isometric-plane {
+  position: absolute;
+  width: var(--isometric-plane-width, 0rem);
+  height: var(--isometric-plane-height, 0rem);
+  background: var(--isometric-plane-color, #000000);
+}
+
+.isometric-border {
+  border: var(--isometric-border-size, 0px) var(--isometric-border-style, solid)
+    var(--isometric-border-color, #000000);
+  box-sizing: border-box;
+}
+
+.isometric-edge::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--isometric-edge-color, #fff), #000 20%);
+  box-shadow: 0px 0px
+    color-mix(in srgb, var(--isometric-edge-color, #fff), #000 20%);
+  transform: translateZ(calc(-1 * var(--isometric-edge-depth, 0px)));
+}
+
+.isometric-position {
+  top: var(--isometric-position-top, 0rem);
+  left: var(--isometric-position-left, 0rem);
+  transform: translateZ(calc(var(--isometric-position-elevation, 0rem) * 0.5));
+}
+
+.isometric-rotation {
+  transform-origin: center;
+  transform: rotateZ(var(--isometric-rotate-from, 0deg));
+  animation: isometric-rotation var(--isometric-rotation-duration, 1s) linear
+    forwards infinite;
+  animation-delay: var(--isometric-rotation-delay, 0s);
+}
+
+@keyframes isometric-rotation {
+  from {
+    transform: rotateZ(var(--rotation-from, 0deg));
+  }
+  to {
+    transform: rotateZ(var(--rotation-to, 360deg));
+  }
+}
+
+.isometric-shadow::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: rgba(
+    0,
+    0,
+    0,
+    calc(0.2 / (1 + var(--isometric-shadow-distance, 0) / 10))
+  );
+  border-color: rgba(
+    0,
+    0,
+    0,
+    calc(0.2 / (1 + var(--isometric-shadow-distance, 0) / 10))
+  );
+  transform: translateX(
+      calc(
+        var(--isometric-shadow-distance-with-unit, 1rem) *
+        var(--isometric-shadow-spacing-x, 0)
+      )
+    )
+    translateY(
+      calc(
+        var(--isometric-shadow-distance-with-unit, 1rem) *
+        var(--isometric-shadow-spacing-y, 0)
+      )
+    )
+    translateZ(calc(-1 * var(--isometric-shadow-distance-with-unit, 1rem)));
+  box-shadow: 0 0 calc(var(--isometric-shadow-distance-with-unit, 1rem) / 10)
+    rgba(0, 0, 0, 0.2);
+  filter: blur(calc(var(--isometric-shadow-distance-with-unit, 1rem) / 10));
+}
+
+.isometric-shadow-animation::after {
+  animation: isometric-shadow-animation
+    var(--isometric-shadow-animation-duration, 1s) ease-in-out forwards
+    var(--isometric-shadow-animation-options);
+  animation-delay: var(--isometric-shadow-animation-delay, 0s);
+}
+
+@keyframes isometric-shadow-animation {
+  from {
+    background: rgba(
+      0,
+      0,
+      0,
+      calc(0.2 / (1 + var(--isometric-shadow-animation-from, 0) / 10))
+    );
+    border-color: rgba(
+      0,
+      0,
+      0,
+      calc(0.2 / (1 + var(--isometric-shadow-animation-from, 0) / 10))
+    );
+    transform: translateX(
+        calc(
+          var(--isometric-shadow-animation-from-with-unit, 0rem) *
+          var(--isometric-shadow-spacing-x, 0)
+        )
+      )
+      translateY(
+        calc(
+          var(--isometric-shadow-animation-from-with-unit, 0rem) *
+          var(--isometric-shadow-spacing-y, 0)
+        )
+      )
+      translateZ(
+        calc(-1 * var(--isometric-shadow-animation-from-with-unit, 0rem))
+      );
+    box-shadow: 0 0
+      calc(var(--isometric-shadow-animation-from-with-unit, 0rem) * 10)
+      rgba(0, 0, 0, 0.2);
+    filter: blur(
+      calc(var(--isometric-shadow-animation-from-with-unit, 0rem) / 10)
+    );
+  }
+
+  to {
+    background: rgba(
+      0,
+      0,
+      0,
+      calc(0.2 / (1 + var(--isometric-shadow-animation-to, 0) / 10))
+    );
+    border-color: rgba(
+      0,
+      0,
+      0,
+      calc(0.2 / (1 + var(--isometric-shadow-animation-to, 0) / 10))
+    );
+    transform: translateX(
+        calc(
+          var(--isometric-shadow-animation-to-with-unit, 0rem) *
+          var(--isometric-shadow-spacing-x, 0)
+        )
+      )
+      translateY(
+        calc(
+          var(--isometric-shadow-animation-to-with-unit, 0rem) *
+          var(--isometric-shadow-spacing-y, 0)
+        )
+      )
+      translateZ(
+        calc(-1 * var(--isometric-shadow-animation-to-with-unit, 0rem))
+      );
+    box-shadow: 0 0
+      calc(var(--isometric-shadow-animation-to-with-unit, 0rem) * 10)
+      rgba(0, 0, 0, 0.2);
+    filter: blur(
+      calc(var(--isometric-shadow-animation-to-with-unit, 0rem) / 10)
+    );
+  }
+}
