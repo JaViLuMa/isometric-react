@@ -7,7 +7,6 @@ export default defineConfig({
   dts: true,
   minify: true,
   external: ["react", "react-dom"],
-  exports: true,
   entry: {
     isometric: "./src/components/isometric/components/Isometric.tsx",
     "isometric-plane":
