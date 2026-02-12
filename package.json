@@ -1,6 +1,6 @@
 {
   "name": "isometric-react",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Matej Ruzic da Silva Pereira <matej.ruzic011@gmail.com>",
   "repository": {
     "type": "git",
@@ -31,10 +31,22 @@
     "vitest-browser-react": "^2.0.2"
   },
   "exports": {
-    "./isometric": "./dist/isometric.js",
-    "./isometric-cube": "./dist/isometric-cube.js",
-    "./isometric-grid": "./dist/isometric-grid.js",
-    "./isometric-plane": "./dist/isometric-plane.js",
+    "./isometric": {
+      "import": "./dist/isometric.js",
+      "types": "./dist/isometric.d.ts"
+    },
+    "./isometric-cube": {
+      "import": "./dist/isometric-cube.js",
+      "types": "./dist/isometric-cube.d.ts"
+    },
+    "./isometric-grid": {
+      "import": "./dist/isometric-grid.js",
+      "types": "./dist/isometric-grid.d.ts"
+    },
+    "./isometric-plane": {
+      "import": "./dist/isometric-plane.js",
+      "types": "./dist/isometric-plane.d.ts"
+    },
     "./isometric.css": "./dist/isometric.css",
     "./package.json": "./package.json"
   },
