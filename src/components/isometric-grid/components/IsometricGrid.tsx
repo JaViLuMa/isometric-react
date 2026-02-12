@@ -72,7 +72,7 @@ const IsometricGridImplementation = (
       className={clsx(
         "isometric-grid",
         positionVariables && "isometric-position",
-        shadowVariables && "isometric-shadow",
+        (shadowVariables || shadowAnimationVariables) && "isometric-shadow",
         shadowAnimationVariables && "isometric-shadow-animation",
         rotationVariables && "isometric-rotation",
         className,

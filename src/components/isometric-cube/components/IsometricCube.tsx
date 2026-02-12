@@ -73,7 +73,7 @@ const IsometricCubeImplementation = (
       className={clsx(
         "isometric-cube",
         positionVariables && "isometric-position",
-        shadowVariables && "isometric-shadow",
+        (shadowVariables || shadowAnimationVariables) && "isometric-shadow",
         shadowAnimationVariables && "isometric-shadow-animation",
         rotationVariables && "isometric-rotation",
         className,
