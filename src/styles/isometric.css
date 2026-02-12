@@ -1,21 +1,3 @@
-@property --isometric-cube-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0rem;
-}
-
-@property --isometric-cube-height {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0rem;
-}
-
-@property --isometric-cube-depth {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0rem;
-}
-
 @property --isometric-border-size {
   syntax: "<length>";
   inherits: false;

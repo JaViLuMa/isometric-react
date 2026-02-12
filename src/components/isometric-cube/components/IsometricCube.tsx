@@ -121,5 +121,3 @@ const IsometricCubeBase = forwardRef(
 export const IsometricCube = Object.assign(IsometricCubeBase, {
   Side: IsometricCubeSide,
 });
-
-export { IsometricCubeSide };
