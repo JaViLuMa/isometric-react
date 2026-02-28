@@ -2,4 +2,4 @@
 
 Full rewrite of IsometricSass using TypeScript, React and CSS variables.
 
-# DOCUMENTATION IN PROGRESS
+For full documentation go here: https://isometric-react-docs.vercel.app/
